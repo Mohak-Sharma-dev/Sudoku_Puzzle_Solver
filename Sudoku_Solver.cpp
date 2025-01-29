@@ -102,9 +102,9 @@ vector<vector<int>> parseInput(const string& input) {
 int main() {
     bool running = true;
     while (running) {
-        cout << "\nSudoku Solver Menu:\n"
+        cout << "\n | Sudoku Solver Menu: | \n"
              << "1. Solve a puzzle\n"
-             << "2. Exit\n"
+             << "2. Exit the game\n"
              << "Choose option: ";
         
         int choice;
@@ -162,42 +162,3 @@ int main() {
     cout << "Goodbye!\n";
     return 0;
 }
-
-
-// int main(int argc, char* argv[]) {
-//     try {
-//         string input;
-//         if (argc > 1) {
-//             ifstream file(argv[1]);
-//             if (!file) throw runtime_error("Could not open file");
-//             string line;
-//             while (getline(file, line)) {
-//                 input += line;
-//             }
-//         } else {
-//             cout << "Enter Sudoku puzzle (81 characters, 0 or . for empty cells):\n";
-//             getline(cin, input);
-//         }
-
-//         // Remove whitespace from input
-//         //input.erase(remove(input.begin(), input.end(), [](unsigned char c){ return isspace(c); }), input.end());
-//         input.erase(remove_if(input.begin(), input.end(), [](unsigned char c){ return isspace(c); }), input.end());
-        
-//         vector<vector<int>> puzzle = parseInput(input);
-//         SudokuSolver solver(puzzle);
-
-//         cout << "\nUnsolved Sudoku:" << endl;
-//         solver.printBoard();
-
-//         if (solver.solve()) {
-//             cout << "\nSolved Sudoku:" << endl;
-//             solver.printBoard();
-//         } else {
-//             cout << "\nNo solution exists" << endl;
-//         }
-//     } catch (const exception& e) {
-//         cerr << "Error: " << e.what() << endl;
-//         return 1;
-//     }
-//     return 0;
-// }
